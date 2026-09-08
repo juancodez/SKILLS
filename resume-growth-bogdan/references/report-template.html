@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{CANDIDATE_NAME}} — Resume Growth Report (Bogdan Method)</title>
+<style>
+  :root {
+    --ink: #111;
+    --muted: #6b6b6b;
+    --line: #e5e5e5;
+    --bg: #fafaf7;
+    --card: #ffffff;
+    --ok: #1a7a3a;
+    --warn: #b06a00;
+    --bad: #b02020;
+    --accent: #2b3a67;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    padding: 40px 24px;
+  }
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 40px 44px;
+  }
+  h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 {
+    font-size: 17px;
+    margin: 32px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h3 { font-size: 14px; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  .score-hero {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 20px 22px; margin: 20px 0 8px;
+    background: #f4f2ec; border-radius: 4px;
+  }
+  .score-hero .num { font-size: 44px; font-weight: 700; letter-spacing: -0.03em; }
+  .score-hero .out { color: var(--muted); font-size: 18px; }
+  .score-hero .label { margin-left: auto; font-weight: 600; }
+  .verdict { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+  th { font-weight: 600; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .pill.ok   { background: #e2f2e8; color: var(--ok); }
+  .pill.warn { background: #fbeed2; color: var(--warn); }
+  .pill.bad  { background: #fbe1e1; color: var(--bad); }
+  .kv { display: grid; grid-template-columns: 220px 1fr; gap: 4px 16px; margin: 8px 0; }
+  .kv dt { color: var(--muted); font-size: 13px; }
+  .kv dd { margin: 0; }
+  .before, .after { border-left: 3px solid var(--line); padding: 6px 12px; margin: 6px 0; background: #fafafa; }
+  .after { border-left-color: var(--ok); background: #f5fbf7; }
+  .before { border-left-color: var(--bad); background: #fdf6f6; }
+  .callout { background: #fff8e1; border-left: 3px solid var(--warn); padding: 10px 14px; margin: 12px 0; border-radius: 2px; font-size: 14px; }
+  code { background: #f2f2ee; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  ul { padding-left: 20px; }
+  ul li { margin: 3px 0; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    main { border: 0; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Resume Growth Report</h1>
+<div class="meta">Candidate: <strong>{{CANDIDATE_NAME}}</strong> · Date: {{DATE}} · Method: Bogdan Zlatkov</div>
+
+<div class="score-hero">
+  <span class="num">{{SCORE}}</span>
+  <span class="out">/ 70</span>
+  <span class="label">{{VERDICT_LABEL}}</span>
+</div>
+<p class="verdict">{{VERDICT_SENTENCE}}</p>
+
+<h2>1. Resume Hook</h2>
+<div class="kv">
+  <dt>Original</dt><dd><span class="pill {{HOOK_ORIGINAL_CLASS}}">{{HOOK_ORIGINAL_STATUS}}</span> {{HOOK_ORIGINAL_NOTE}}</dd>
+  <dt>Value-add</dt><dd><span class="pill {{HOOK_VALUEADD_CLASS}}">{{HOOK_VALUEADD_STATUS}}</span> {{HOOK_VALUEADD_NOTE}}</dd>
+  <dt>Informal / human</dt><dd><span class="pill {{HOOK_INFORMAL_CLASS}}">{{HOOK_INFORMAL_STATUS}}</span> {{HOOK_INFORMAL_NOTE}}</dd>
+  <dt>Dollar figure (4%→7% lift)</dt><dd><span class="pill {{HOOK_DOLLAR_CLASS}}">{{HOOK_DOLLAR_STATUS}}</span> {{HOOK_DOLLAR_NOTE}}</dd>
+  <dt>Banned filler words</dt><dd>{{HOOK_BANNED_LIST}}</dd>
+</div>
+<h3>Current hook</h3>
+<div class="before">{{HOOK_CURRENT}}</div>
+<h3>Suggested rewrite</h3>
+<div class="after">{{HOOK_REWRITE}}</div>
+
+<h2>2. Bullet Formula (Verb + Method + Result)</h2>
+<p>Bullets scored: <strong>{{BULLETS_PASS}}</strong> pass / <strong>{{BULLETS_FAIL}}</strong> fail (of {{BULLETS_TOTAL}}).</p>
+<table>
+  <thead><tr><th>#</th><th>Bullet (excerpt)</th><th>Verb</th><th>Method</th><th>Result</th></tr></thead>
+  <tbody>
+    {{BULLET_FORMULA_ROWS}}
+  </tbody>
+</table>
+
+<h2>3. Word Count</h2>
+<div class="kv">
+  <dt>Words</dt><dd><strong>{{WORD_COUNT}}</strong></dd>
+  <dt>Target for {{YEARS_EXPERIENCE}} yrs</dt><dd>{{TARGET_RANGE}}</dd>
+  <dt>Verdict</dt><dd><span class="pill {{WORDS_CLASS}}">{{WORDS_STATUS}}</span></dd>
+</div>
+{{WORD_COUNT_NOTE}}
+
+<h2>4. The "and" Test</h2>
+<p>Bullets with more than one <code>and</code>: <strong>{{AND_VIOLATIONS_COUNT}}</strong></p>
+<table>
+  <thead><tr><th>#</th><th>Bullet</th><th>"and" count</th><th>Fix</th></tr></thead>
+  <tbody>
+    {{AND_VIOLATION_ROWS}}
+  </tbody>
+</table>
+
+<h2>5. Five Verb-Type Balance</h2>
+<table>
+  <thead><tr><th>Type</th><th>Count</th><th>%</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Built</td><td>{{BUILT_COUNT}}</td><td>{{BUILT_PCT}}%</td><td><span class="pill {{BUILT_CLASS}}">{{BUILT_STATUS}}</span></td></tr>
+    <tr><td>Led</td><td>{{LED_COUNT}}</td><td>{{LED_PCT}}%</td><td><span class="pill {{LED_CLASS}}">{{LED_STATUS}}</span></td></tr>
+    <tr><td>Managed</td><td>{{MANAGED_COUNT}}</td><td>{{MANAGED_PCT}}%</td><td><span class="pill {{MANAGED_CLASS}}">{{MANAGED_STATUS}}</span></td></tr>
+    <tr><td>Collaborated</td><td>{{COLLAB_COUNT}}</td><td>{{COLLAB_PCT}}%</td><td><span class="pill {{COLLAB_CLASS}}">{{COLLAB_STATUS}}</span></td></tr>
+    <tr><td>Improved</td><td>{{IMPROVED_COUNT}}</td><td>{{IMPROVED_PCT}}%</td><td><span class="pill {{IMPROVED_CLASS}}">{{IMPROVED_STATUS}}</span></td></tr>
+  </tbody>
+</table>
+<div class="callout">{{BALANCE_INSIGHT}}</div>
+
+<h2>6. ATS &amp; Keywords</h2>
+{{ATS_SECTION}}
+
+<h2>7. Top Fixes (do these first)</h2>
+<ol>
+  {{TOP_FIXES_LIST}}
+</ol>
+
+<h2>Rewrite Suggestions — Before / After</h2>
+{{BEFORE_AFTER_BLOCKS}}
+
+<footer>
+  Generated by <code>/resume-growth-bogdan</code> — evaluation is based on Bogdan Zlatkov's rules
+  (JobScan webinar, 2026-08-20). Numeric benchmarks are Bogdan's, not universal truths.
+</footer>
+
+</main>
+</body>
+</html>
