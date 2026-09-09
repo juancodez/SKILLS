@@ -81,19 +81,31 @@ Over-length penalty: long resumes go into the **maybe pile** — which, in this 
 
 Classify every bullet into one of these five verb families. A balanced resume shows all five; over-indexing in one family and missing another is the most common failure Bogdan sees.
 
-| Type | Synonyms include |
-|---|---|
-| **Built** | created, developed, designed, established, initiated, launched |
-| **Led** | led, directed, drove, spearheaded, owned |
-| **Managed** | managed, oversaw, coordinated, ran, administered |
-| **Collaborated** | collaborated, partnered, worked with, cross-functional, aligned |
-| **Improved** | improved, optimized, increased, reduced, accelerated, doubled |
+| Type | Synonyms include | Weight |
+|---|---|---|
+| **Built** | created, developed, designed, established, initiated, launched | standard |
+| **Led** | led, directed, drove, spearheaded, owned | **spotlight** |
+| **Managed** | managed, oversaw, coordinated, ran, administered | standard |
+| **Collaborated** | collaborated, partnered, worked with, cross-functional, aligned | **spotlight** |
+| **Improved** | improved, optimized, increased, reduced, accelerated, doubled | standard |
 
 **Distinction — Managed vs Led:**
 - **Managed** = a thing (program, project, budget).
 - **Led** = people / direction / initiative (team, direct reports, strategy).
 
-**Failure pattern to flag:** heavy on Built + Led, zero Collaborated → recruiters read this as a lone wolf.
+**Spotlight families — Led and Collaborated.** Bogdan calls these out by name in the transcription:
+- *"Leadership is obviously a very important quality right now."*
+- *"One of the most important soft skills that a recruiter is looking for is someone who can collaborate with different teams."*
+
+Both case studies in the talk (Eric, the marketing client) are built on the same failure: strong Built + Managed, **zero Led or zero Collaborated**. Fixing that gap is presented as the single most impactful edit in the whole workshop.
+
+**Hard flags (auto-deduct — do not average away):**
+- 0 Collaborated bullets → recruiters read "lone wolf". Flag even if all other 4 families are present.
+- 0 Led bullets on any resume claiming seniority, PM/design lead, ownership, or direct reports → flag as leadership gap.
+- Led OR Collaborated < 15% of bullets → still a flag, softer.
+- Built + Managed together > 60% with weak Led/Collaborated → "does the work but doesn't lead or partner" — Bogdan's exact failure pattern.
+
+**Failure pattern to flag:** heavy on Built + Led, zero Collaborated → lone wolf. Heavy on Built + Managed, zero Led → individual contributor stuck in place.
 
 ---
 

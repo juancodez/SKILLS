@@ -76,16 +76,28 @@ For each bullet, count occurrences of the standalone word `and` (case-insensitiv
 
 Score = 10 × (bullets with ≤1 / total).
 
-### Block 6 — Five verb-type balance
+### Block 6 — Five verb-type balance (Led + Collaborated weighted)
 Classify **every bullet** into ONE of the five families (Built / Led / Managed / Collaborated / Improved) using the synonym lists in `bogdan-rules.md` § 5. When a bullet could fit two families, pick the dominant verb.
 
-Compute % for each family. Score:
+Compute % for each family. Base score:
 - All 5 families present, none >40%, none 0% → 10.
 - 4 families present → 7.
 - 3 families → 4.
 - ≤2 → 0.
 
-Flag: "Over-indexed on **X**" and "Missing **Y**" explicitly.
+Then apply **spotlight deductions** (Bogdan singles out Led and Collaborated as the two most-valued families — see `bogdan-rules.md` § 5):
+- 0 Collaborated bullets → −3 (lone-wolf flag). Do not skip this even if all 5 families are technically present but one is at 0%.
+- 0 Led bullets on a resume that claims seniority, ownership, lead role, or direct reports → −3.
+- Led < 15% of bullets → −1.
+- Collaborated < 15% of bullets → −1.
+- Built + Managed combined > 60% with weak Led/Collaborated (<15% each) → −2 (Bogdan's exact failure pattern from the transcription case studies).
+
+Floor at 0. Do not stack the same deduction twice (e.g. "0 Collaborated" already covers "Collaborated <15%").
+
+Flag explicitly in the chat report:
+- "Over-indexed on **X**"
+- "Missing **Y**"
+- "Spotlight gap: **Led** / **Collaborated**" when either is 0% or <15%, since these are the two Bogdan explicitly names as most-important.
 
 ### Block 7 — ATS & keywords (only if JD provided)
 - Extract 15–20 keywords from the JD (skills, tools, methodologies, certifications, exact-phrase requirements).
